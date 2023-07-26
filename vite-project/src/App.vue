@@ -1,8 +1,8 @@
 <!--
  * @Author: yangmingyue
  * @Date: 2023-07-24 19:45:55
- * @LastEditors: yangmingyue
- * @LastEditTime: 2023-07-24 19:49:56
+ * @LastEditors: error: git config user.name & please set dead value or install git
+ * @LastEditTime: 2023-07-26 15:29:57
  * @Description: 
  * 
  * @copyright: Copyright (c) 2023 瑞康医药集团股份有限公司 (realcan.cn), All Rights Reserved.
@@ -10,6 +10,8 @@
 -->
 <script setup>
 import AmapDemo from "./views/vue-amap/amapDemo.vue";
+// import AmapDemo2 from "./views/vue-amap/amapDemo2.vue";
+// import AmapDemo3 from "./views/vue-amap/amapDemo3.vue";
 </script>
 
 <template>

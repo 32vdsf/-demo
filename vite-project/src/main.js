@@ -1,8 +1,8 @@
 /**
  * @Author: yangmingyue
  * @Date: 2023-07-24 19:45:55
- * @LastEditors: yangmingyue
- * @LastEditTime: 2023-07-25 20:15:14
+ * @LastEditors: error: git config user.name & please set dead value or install git
+ * @LastEditTime: 2023-07-26 14:54:35
  * @Description: 
  * @
  * @copyright: Copyright (c) 2023 瑞康医药集团股份有限公司 (realcan.cn), All Rights Reserved.
@@ -21,6 +21,15 @@ app.config.productionTip = false
 // })
 
 app.use(VueAmap)
+// VueAmap.initAMapApiLoader({
+//     // 高德key
+//     key: '639d4746cedd0f218a1ce498f10d9559',
+//     // 插件集合 （插件按需引入）
+//     plugin: ['AMap.Autocomplete', 'AMap.PlaceSearch', 'AMap.Scale', 'AMap.OverView',
+//   'AMap.ToolBar', 'AMap.MapType', 'AMap.PolyEditor', 'AMap.CircleEditor', 'AMap.MarkerClusterer', 'AMap.MoveAnimation'],
+//     v: '1.4.15',
+//     uiVersion: '1.0.11'
+//   })
 app.use(ElementPlus)
 // var map = new AMap.Map('container');
 app.mount('#app')

@@ -11,11 +11,11 @@
   "dependencies": {
     "@amap/amap-jsapi-loader": "^1.0.1",
     "element-plus": "^2.3.8",
-    "vue": "^3.3.4",
-    "vue-amap": "^0.5.10"
+    "vue": "^3.3.4"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.2.3",
-    "vite": "^4.4.5"
+    "vite": "^4.4.5",
+    "vue-amap": "^0.5.10"
   }
 }
