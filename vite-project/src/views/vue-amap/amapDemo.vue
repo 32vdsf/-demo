@@ -151,21 +151,21 @@ onMounted(() => {
         "AMap.Polyline",
       ],
       function () {
+        // animationMove();
         //异步同时加载多个插件
         // 添加地图插件
         // map.addControl(new AMap.ToolBar()) // 工具条控件;范围选择控件
-        map.addControl(new AMap.Scale()); // 显示当前地图中心的比例尺
+        // map.addControl(new AMap.Scale()); // 显示当前地图中心的比例尺
         // map.addControl(new AMap.HawkEye()) // 显示缩略图
         // map.addControl(new AMap.Geolocation()) // 定位当前位置
         // map.addControl(new AMap.MapType()) // 实现默认图层与卫星图,实时交通图层之间切换
-
         // 以下是鼠标工具插件
-        const mouseTool = new AMap.MouseTool(map);
+        // const mouseTool = new AMap.MouseTool(map);
         // mouseTool.rule();// 用户手动绘制折线图,测量距离
         // mouseTool.measureArea() // 测量面积
       }
     );
-    console.log("AMap", AMap);
+    // console.log("AMap", AMap);
 
     const map = new AMap.Map("map", {
       mapStyle: "amap://styles/macaron",
@@ -174,43 +174,27 @@ onMounted(() => {
       center: [121.391382, 37.539297],
       // viewMode: "3D", //使用3D视图
     });
-    // var marker = new AMap.Marker({
-    //   position: [116.481181, 39.989792], //位置
-    // });
-    //贝赛尔曲线经过的起点，途经点，控制点，终点的二维数组
-    var startPoint = [[121.391382, 37.539297]]; // 起点
-    var viaPoint1 = [
-      [116.39, 39.9],
-      [106.39, 38.9],
-    ]; // 控制点，途经点
-    var viaPoint2 = [
-      [116.39, 39.9],
-      [106.39, 38.9],
-      [106.39, 38.9],
-    ]; // 控制点，控制点，途经点
-    var endPoint = [
-      [116.39, 39.9],
-      [106.39, 38.9],
-    ]; // 控制点，终点
-
-    var path = [startPoint, viaPoint1, viaPoint2, endPoint];
-
-    var bezierCurve = new AMap.BezierCurve({
-      path: path,
-      strokeWeight: 10, // 线条宽度
-      strokeColor: "#fff", // 线条颜色
-      isOutline: true, // 是否描边
-      outlineColor: "red", // 描边颜色
-      borderWeight: 2, // 描边宽度
-    });
-
-    map.add(bezierCurve);
     // 实例化点标记
+    // const marker = new AMap.Marker({
+    //   icon: "//a.amap.com/jsapi_demos/static/demo-center/icons/poi-marker-default.png",
+    //   position: [121.391382, 37.539297], // 这里我们通过上面的点击获取经纬度坐标,实时添加标记
+    //   // 通过设置 offset 来添加偏移量
+    //   offset: new AMap.Pixel(-26, -54),
+    // });
+    var blueIcon = new AMap.Icon({
+      // size: new AMap.Size(50, 120), // 设置图标大小
+      image: "https://a.amap.com/jsapi_demos/static/demo-center-v2/car.png", // 设置图标样式
+      imageOffset: new AMap.Pixel(0, 0), // 设置图标偏移
+      imageSize: new AMap.Size(32, 50), // 设置图标尺寸
+    });
     const marker = new AMap.Marker({
-      icon: "//a.amap.com/jsapi_demos/static/demo-center/icons/poi-marker-default.png",
-      position: [121.391382, 37.539297], // 这里我们通过上面的点击获取经纬度坐标,实时添加标记
-      // 通过设置 offset 来添加偏移量
-      offset: new AMap.Pixel(-26, -54),
+      map: map,
+      position: [121.391382, 37.539297],
+      icon: blueIcon,
+      offset: new AMap.Pixel(-13, -26),
+      draggable: true, // 设置 marker 可拖拽
+      // imageSize: new AMap.Size(50, 50), // 设置图标尺寸
+      // size: new AMap.Size(32, 32), // 设置图标大小
     });
     //这里监听标注点的点击事件，触发实现动画效果
     marker.on("click", function () {
@@ -221,25 +205,25 @@ onMounted(() => {
       AMap.plugin("AMap.MoveAnimation", function () {
         var marker,
           lineArr = [
-            [116.478935, 39.997761],
-            [117.478939, 39.997825],
-            [117.478912, 39.998549],
-            [117.478912, 39.998549],
-            [117.478998, 39.998555],
-            [117.478998, 39.998555],
-            [117.479282, 39.99856],
-            [117.479658, 39.998528],
-            [117.480151, 39.998453],
-            [117.480784, 39.998302],
-            [117.480784, 39.998302],
-            [117.481149, 39.998184],
-            [117.481573, 39.997997],
-            [117.481863, 39.997846],
-            [117.482072, 39.997718],
-            [117.482362, 39.997718],
-            [117.483633, 39.998935],
-            [117.48367, 39.998968],
-            [116.484648, 39.999861],
+            [121.391382, 37.539297],
+            [121.391483, 37.539315],
+            [121.391584, 37.53942],
+            [121.391685, 37.53953],
+            [121.391686, 37.53966],
+            [121.391787, 37.53978],
+            [121.391888, 37.5398],
+            [121.391986, 37.53992],
+            [121.392082, 37.54],
+            [121.402582, 37.545],
+            // [121.391382, 37.s56],
+            // [121.391382, 37.5795],
+            // [121.391382, 37.582],
+            // [121.391382, 37.584],
+            // [121.391382, 37.586],
+            // [121.391382, 37.588],
+            // [121.391382, 37.5884],
+            // [121.391382, 37.58662],
+            // [121.391382, 37.58964],
           ];
 
         var map = new AMap.Map("map", {
@@ -247,12 +231,20 @@ onMounted(() => {
           center: [116.397428, 39.90923],
           zoom: 17,
         });
-
+        var blueIcon = new AMap.Icon({
+          // size: new AMap.Size(50, 120), // 设置图标大小
+          image: "https://a.amap.com/jsapi_demos/static/demo-center-v2/car.png", // 设置图标样式
+          imageOffset: new AMap.Pixel(0, 0), // 设置图标偏移
+          imageSize: new AMap.Size(32, 50), // 设置图标尺寸
+        });
         marker = new AMap.Marker({
           map: map,
-          position: [116.478935, 39.997761],
-          icon: "https://a.amap.com/jsapi_demos/static/demo-center-v2/car.png",
+          position: [121.391382, 37.539297],
+          icon: blueIcon,
           offset: new AMap.Pixel(-13, -26),
+          draggable: true, // 设置 marker 可拖拽
+          // imageSize: new AMap.Size(50, 50), // 设置图标尺寸
+          // size: new AMap.Size(32, 32), // 设置图标大小
         });
 
         // 绘制轨迹
@@ -368,5 +360,8 @@ onMounted(() => {
   /* width: 300px; */
   height: 100%;
   margin: auto;
+}
+.amap-icon {
+  width: 50px;
 }
 </style>
