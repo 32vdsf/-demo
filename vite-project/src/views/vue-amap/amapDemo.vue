@@ -150,20 +150,7 @@ onMounted(() => {
         "AMap.MouseTool",
         "AMap.Polyline",
       ],
-      function () {
-        // animationMove();
-        //异步同时加载多个插件
-        // 添加地图插件
-        // map.addControl(new AMap.ToolBar()) // 工具条控件;范围选择控件
-        // map.addControl(new AMap.Scale()); // 显示当前地图中心的比例尺
-        // map.addControl(new AMap.HawkEye()) // 显示缩略图
-        // map.addControl(new AMap.Geolocation()) // 定位当前位置
-        // map.addControl(new AMap.MapType()) // 实现默认图层与卫星图,实时交通图层之间切换
-        // 以下是鼠标工具插件
-        // const mouseTool = new AMap.MouseTool(map);
-        // mouseTool.rule();// 用户手动绘制折线图,测量距离
-        // mouseTool.measureArea() // 测量面积
-      }
+      function () {}
     );
     // console.log("AMap", AMap);
 
@@ -181,26 +168,24 @@ onMounted(() => {
     //   // 通过设置 offset 来添加偏移量
     //   offset: new AMap.Pixel(-26, -54),
     // });
-    var blueIcon = new AMap.Icon({
-      // size: new AMap.Size(50, 120), // 设置图标大小
-      image: "https://a.amap.com/jsapi_demos/static/demo-center-v2/car.png", // 设置图标样式
-      imageOffset: new AMap.Pixel(0, 0), // 设置图标偏移
-      imageSize: new AMap.Size(32, 50), // 设置图标尺寸
-    });
-    const marker = new AMap.Marker({
-      map: map,
-      position: [121.391382, 37.539297],
-      icon: blueIcon,
-      offset: new AMap.Pixel(-13, -26),
-      draggable: true, // 设置 marker 可拖拽
-      // imageSize: new AMap.Size(50, 50), // 设置图标尺寸
-      // size: new AMap.Size(32, 32), // 设置图标大小
-    });
+    // var blueIcon = new AMap.Icon({
+    //   // size: new AMap.Size(50, 120), // 设置图标大小
+    //   image: "https://a.amap.com/jsapi_demos/static/demo-center-v2/car.png", // 设置图标样式
+    //   imageOffset: new AMap.Pixel(0, 0), // 设置图标偏移
+    //   imageSize: new AMap.Size(32, 50), // 设置图标尺寸
+    // });
+    // const marker = new AMap.Marker({
+    //   map: map,
+    //   position: [121.391382, 37.539297],
+    //   icon: blueIcon,
+    //   offset: new AMap.Pixel(-13, -26),
+    //   draggable: true, // 设置 marker 可拖拽
+    // });
     //这里监听标注点的点击事件，触发实现动画效果
-    marker.on("click", function () {
-      animationMove();
-    });
-    marker.setMap(map);
+    // marker.on("click", function () {
+    animationMove();
+    // });
+    // marker.setMap(map);
     function animationMove() {
       AMap.plugin("AMap.MoveAnimation", function () {
         var marker,
@@ -214,7 +199,7 @@ onMounted(() => {
             [121.391888, 37.5398],
             [121.391986, 37.53992],
             [121.392082, 37.54],
-            [121.402582, 37.545],
+            // [121.402582, 37.545],
             // [121.391382, 37.s56],
             // [121.391382, 37.5795],
             // [121.391382, 37.582],
@@ -272,7 +257,7 @@ onMounted(() => {
         map.setFitView();
         marker.moveAlong(lineArr, {
           // 每一段的时长
-          duration: 500, //可根据实际采集时间间隔设置
+          duration: 3000, //可根据实际采集时间间隔设置
           // JSAPI2.0 是否延道路自动设置角度在 moveAlong 里设置
           autoRotation: true,
         });
@@ -351,8 +336,8 @@ onMounted(() => {
 
 <style scoped>
 .container {
-  width: 2000px;
-  height: 1000px;
+  width: 100vw;
+  height: 100vh;
 }
 #map {
   margin-top: -200px;

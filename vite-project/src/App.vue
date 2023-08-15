@@ -1,8 +1,8 @@
 <!--
  * @Author: yangmingyue
  * @Date: 2023-07-24 19:45:55
- * @LastEditors: error: git config user.name & please set dead value or install git
- * @LastEditTime: 2023-07-26 15:29:57
+ * @LastEditors: yangmingyue
+ * @LastEditTime: 2023-08-11 11:41:02
  * @Description: 
  * 
  * @copyright: Copyright (c) 2023 瑞康医药集团股份有限公司 (realcan.cn), All Rights Reserved.
@@ -10,8 +10,8 @@
 -->
 <script setup>
 import AmapDemo from "./views/vue-amap/amapDemo.vue";
-// import AmapDemo2 from "./views/vue-amap/amapDemo2.vue";
-// import AmapDemo3 from "./views/vue-amap/amapDemo3.vue";
+import AmapDemo2 from "./views/vue-amap/amapDemo2.vue";
+import AmapDemo3 from "./views/vue-amap/amapDemo3.vue";
 </script>
 
 <template>
@@ -22,13 +22,13 @@ import AmapDemo from "./views/vue-amap/amapDemo.vue";
     <a href="https://vuejs.org/" target="_blank">
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a> -->
-    <AmapDemo />
+    <AmapDemo3 />
   </div>
   <!-- <HelloWorld msg="Vite + Vue" /> -->
 </template>
 
 <style scoped>
-.logo {
+/* .logo {
   height: 6em;
   padding: 1.5em;
   will-change: filter;
@@ -39,5 +39,11 @@ import AmapDemo from "./views/vue-amap/amapDemo.vue";
 }
 .logo.vue:hover {
   filter: drop-shadow(0 0 2em #42b883aa);
+} */
+#app {
+  height: 100px;
+  width: 1280px;
+  margin: 0;
+  padding: 0;
 }
 </style>

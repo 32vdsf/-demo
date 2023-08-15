@@ -1,8 +1,8 @@
 <!--
  * @Author: error: git config user.name & please set dead value or install git
  * @Date: 2023-07-26 14:26:17
- * @LastEditors: error: git config user.name & please set dead value or install git
- * @LastEditTime: 2023-07-26 15:08:02
+ * @LastEditors: yangmingyue
+ * @LastEditTime: 2023-08-11 10:33:28
  * @Description: 
  * 
  * @copyright: Copyright (c) 2023 瑞康医药集团股份有限公司 (realcan.cn), All Rights Reserved.
@@ -123,8 +123,8 @@ onMounted(() => {
 </script>
 <style scoped>
 .container {
-  width: 2000px;
-  height: 1000px;
+  width: 100vw;
+  height: 100vh;
 }
 #map {
   margin-top: -200px;
