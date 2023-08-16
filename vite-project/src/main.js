@@ -2,7 +2,7 @@
  * @Author: yangmingyue
  * @Date: 2023-07-24 19:45:55
  * @LastEditors: yangmingyue
- * @LastEditTime: 2023-07-27 19:47:46
+ * @LastEditTime: 2023-08-15 10:05:19
  * @Description: 
  * @
  * @copyright: Copyright (c) 2023 瑞康医药集团股份有限公司 (realcan.cn), All Rights Reserved.
@@ -13,7 +13,7 @@ import './style.css'
 import App from './App.vue'
 import VueAmap from 'vue-amap'
 import ElementPlus from 'element-plus'
-
+import 'element-plus/dist/index.css'
 const app = createApp(App)
 app.config.productionTip = false
 // app.initAmapApiLoader({
